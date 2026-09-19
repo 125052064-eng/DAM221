@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo de Caja - Restaurante</title>
+  <style>
+    .pantalla-caja {
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Caja - Registro de Pedidos</h1>
+
+  <!-- Selección de producto con lista desplegable para evitar errores de escritura -->
+  <div>
+    <label for="productoSelect"><strong>Producto:</strong></label>
+    <select id="productoSelect">
+      <option value="Tacos" data-precio="45">Tacos - $45</option>
+      <option value="Hamburguesa" data-precio="120">Hamburguesa - $120</option>
+      <option value="Refresco" data-precio="30">Refresco - $30</option>
+      <option value="Papas Fritas" data-precio="50">Papas Fritas - $50</option>
+    </select>
+
+    <label for="cantidadInput"><strong>Cantidad:</strong></label>
+    <input type="number" id="cantidadInput" value="1" min="1">
+
+    <button onclick="capturarPedido()">Agregar Pedido</button>
+  </div>
+
+  <h2>Lista de Pedidos Registrados</h2>
+  <ul id="listaUI"></ul>
+
+  <!-- Cuadro que no permite escribir y solo muestra el total acumulado en pesos -->
+  <div>
+    <label for="cuadroTotal"><strong>Total Acumulado en Pesos:</strong></label><br>
+    <input 
+      type="text" 
+      id="cuadroTotal" 
+      class="pantalla-caja" 
+      value="$0.00" 
+      disabled 
+      readonly
+    >
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
