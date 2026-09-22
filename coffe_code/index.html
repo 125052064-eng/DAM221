@@ -2,53 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Módulo de Caja - Restaurante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Cafetería</title>
   <style>
-    .pantalla-caja {
-      font-size: 1.2rem;
-      font-weight: bold;
-      background-color: #f0f0f0;
-      color: #333;
-      padding: 8px;
-      border: 2px solid #ccc;
-      border-radius: 4px;
-      width: 200px;
-    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f8f5f2; color: #333; }
+    h1 { text-align: center; color: #4a2c2a; }
+    .modulo { background: white; border: 1px solid #e0d6cb; padding: 18px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .pantalla-caja { font-size: 1.1rem; font-weight: bold; background: #f0ebe5; width: 140px; text-align: right; padding: 6px; border: 1px solid #ccc; border-radius: 5px; }
+    .seccion-caja { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; }
+    button { padding: 8px 14px; margin-right: 5px; margin-bottom: 5px; cursor: pointer; background-color: #6f4e37; color: white; border: none; border-radius: 5px; font-weight: bold; }
+    button:hover { background-color: #513825; }
+    select, input[type="number"] { padding: 6px; margin-right: 10px; border-radius: 4px; border: 1px solid #ccc; }
+    ul { background: #fafafa; padding: 15px 30px; border-radius: 5px; border: 1px solid #eee; }
+    li { margin-bottom: 5px; }
   </style>
 </head>
 <body>
-  <h1>Caja - Registro de Pedidos</h1>
 
-  <!-- Selección de producto con lista desplegable para evitar errores de escritura -->
-  <div>
-    <label for="productoSelect"><strong>Producto:</strong></label>
-    <select id="productoSelect">
-      <option value="Tacos" data-precio="45">Tacos - $45</option>
-      <option value="Hamburguesa" data-precio="120">Hamburguesa - $120</option>
-      <option value="Refresco" data-precio="30">Refresco - $30</option>
-      <option value="Papas Fritas" data-precio="50">Papas Fritas - $50</option>
+  <h1>☕ Sistema para Cafetería</h1>
+
+  <!-- MÓDULO 03: CLIENTE -->
+  <div class="modulo">
+    <h2>03. Módulo Cliente (Tomar Pedido)</h2>
+    <label for="selectProducto"><strong>Seleccionar Producto:</strong></label>
+    <select id="selectProducto">
+      <optgroup label="☕ Bebidas">
+        <option value="1">Café Americano - $40</option>
+        <option value="2">Cappuccino - $55</option>
+        <option value="3">Latte Frío - $60</option>
+        <option value="4">Té Chai - $48</option>
+      </optgroup>
+      <optgroup label="🥐 Alimentos">
+        <option value="5">Croissant de Jamón y Queso - $65</option>
+        <option value="6">Bagel de Pavo - $75</option>
+        <option value="7">Panini de Pollo - $85</option>
+        <option value="8">Rebanada de Pastel - $50</option>
+      </optgroup>
     </select>
 
-    <label for="cantidadInput"><strong>Cantidad:</strong></label>
-    <input type="number" id="cantidadInput" value="1" min="1">
-
-    <button onclick="capturarPedido()">Agregar Pedido</button>
+    <label for="inputCantidad"><strong>Cantidad:</strong></label>
+    <input type="number" id="inputCantidad" value="1" min="1" style="width: 60px;">
+    
+    <button onclick="crearNuevoPedido()">Agregar al Pedido</button>
   </div>
 
-  <h2>Lista de Pedidos Registrados</h2>
-  <ul id="listaUI"></ul>
+  <!-- MÓDULO 02: COCINA / BARISTA -->
+  <div class="modulo">
+    <h2>02. Módulo Cocina / Barista (Filtros)</h2>
+    <button onclick="filtrarBaratos()">Económicos (&lt; $60)</button>
+    <button onclick="filtrarCaros()">Especiales (&ge; $60)</button>
+    <button onclick="filtrarCategoria('Bebida')">Ver Bebidas</button>
+    <button onclick="filtrarCategoria('Alimento')">Ver Alimentos</button>
+    <button onclick="mostrarTodosCocina()" style="background-color: #8c8c8c;">Ver Todos</button>
+    <ul id="listaCocinaUI">
+      <li>No hay pedidos en cola.</li>
+    </ul>
+  </div>
 
-  <!-- Cuadro que no permite escribir y solo muestra el total acumulado en pesos -->
-  <div>
-    <label for="cuadroTotal"><strong>Total Acumulado en Pesos:</strong></label><br>
-    <input 
-      type="text" 
-      id="cuadroTotal" 
-      class="pantalla-caja" 
-      value="$0.00" 
-      disabled 
-      readonly
-    >
+  <!-- MÓDULO 01: CAJA -->
+  <div class="modulo" style="border-left: 6px solid #2e7d32;">
+    <h2>01. Módulo Caja (Cobro)</h2>
+    <h3>Detalle de la Cuenta:</h3>
+    <ul id="listaCajaUI">
+      <li>Sin productos registrados.</li>
+    </ul>
+
+    <div class="seccion-caja">
+      <div>
+        <label><strong>Subtotal:</strong></label><br>
+        <input type="text" id="inputSubtotal" class="pantalla-caja" value="$0.00" disabled readonly>
+      </div>
+      <div>
+        <label><strong>IVA (16%):</strong></label><br>
+        <input type="text" id="inputIVA" class="pantalla-caja" value="$0.00" disabled readonly>
+      </div>
+      <div>
+        <label><strong>Total a Cobrar:</strong></label><br>
+        <input type="text" id="inputTotal" class="pantalla-caja" style="color: #2e7d32;" value="$0.00" disabled readonly>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
