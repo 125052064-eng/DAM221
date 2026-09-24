@@ -1,0 +1,7 @@
+{
+  "name": "sistema-ventas-tienda",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sistema escolar de caja, clientes e inventario"
+}
