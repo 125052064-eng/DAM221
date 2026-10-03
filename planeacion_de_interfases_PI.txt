@@ -1,0 +1,6 @@
+/* menu de inicio in ->perfil -> catalogo de cursos in 
+menu click curso u -> valores curso -> impartir curso 
+
+menu de inicio in -> catalogo de cursos in  -> 
+menu click curso in -> menu in -> */ 
+
