@@ -3,42 +3,35 @@
     "id": 1,
     "nombre": "Agua natural",
     "categoria": "Bebidas",
-    "precio": 15.0,
+    "precio": 15,
     "stock": 20
   },
   {
     "id": 2,
     "nombre": "Refresco",
     "categoria": "Bebidas",
-    "precio": 22.0,
-    "stock": 15
+    "precio": 22,
+    "stock": 13
   },
   {
     "id": 3,
     "nombre": "Pastel de chocolate",
     "categoria": "Postres",
-    "precio": 45.0,
-    "stock": 14
+    "precio": 45,
+    "stock": 7
   },
   {
     "id": 4,
     "nombre": "Galletas",
     "categoria": "Postres",
-    "precio": 18.0,
+    "precio": 18,
     "stock": 10
   },
   {
     "id": 5,
     "nombre": "Sandwich",
     "categoria": "Comida",
-    "precio": 38.0,
-    "stock": 8
-  },
-  {
-    "id": 6,
-    "nombre": "coca cola",
-    "categoria": "bebidas",
-    "precio": 20.0,
-    "stock": 48
+    "precio": 38,
+    "stock": 10
   }
 ]

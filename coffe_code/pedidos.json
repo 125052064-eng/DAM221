@@ -1,0 +1,57 @@
+[
+  {
+    "folio": "20260925032626-130",
+    "fecha": "24/9/2026, 9:26:26 p.m.",
+    "cliente": "oscar",
+    "productos": [
+      {
+        "productoId": 2,
+        "nombre": "Refresco",
+        "cantidad": 2,
+        "precio": 22,
+        "importe": 44
+      },
+      {
+        "productoId": 3,
+        "nombre": "Pastel de chocolate",
+        "cantidad": 1,
+        "precio": 45,
+        "importe": 45
+      },
+      {
+        "productoId": 4,
+        "nombre": "Galletas",
+        "cantidad": 2,
+        "precio": 18,
+        "importe": 36
+      }
+    ],
+    "subtotal": 125,
+    "iva": 20,
+    "total": 145,
+    "pago": 200,
+    "cambio": 55,
+    "estado": "Listo"
+  },
+  {
+    "folio": "CLI-20260925032729-2",
+    "idPedido": 2,
+    "fecha": "24/9/2026, 9:27:29 p.m.",
+    "cliente": "0",
+    "productos": [
+      {
+        "productoId": 1,
+        "nombre": "Agua natural",
+        "cantidad": 1,
+        "precio": 15,
+        "importe": 15
+      }
+    ],
+    "subtotal": 15,
+    "iva": 2.4,
+    "total": 17.4,
+    "pago": 0,
+    "cambio": 0,
+    "estado": "Pendiente"
+  }
+]

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Aplicaciones Web</title>
+
+    <style>
+
+        body {
+            margin: 20px;
+            font-family: Arial;
+        }
+
+        .contenedor {
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .encabezado {
+            background-color: lightblue;
+            border: 2px solid black;
+            padding: 25px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .parte-superior {
+            display: grid;
+            grid-template-columns: 45% 55%;
+        }
+
+        .formulario {
+            background-color: lightgreen;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .tabla {
+            background-color: lightyellow;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .referencias {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .r1 {
+            background-color: lightcoral;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .r2 {
+            background-color: lightsalmon;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .r3 {
+            background-color: lightpink;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .experiencia {
+            display: flex;
+            background-color: lightgray;
+            border: 2px solid black;
+            padding: 20px;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .foto {
+            padding: 20px;
+        }
+
+        .foto img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .texto {
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <!-- TITULO -->
+        <div class="encabezado">
+            <h1>EXAMEN 1ER PARCIAL - APLICACIONES WEB</h1>
+        </div>
+
+
+        <div class="parte-superior">
+
+           
+            <div class="formulario">
+
+                <h2>FORMULARIO</h2>
+
+                <ul>
+                    <li>Marca</li>
+                    <li>Modelo</li>
+                    <li>Año</li>
+                    <li>Precio</li>
+                </ul>
+
+            </div>
+
+            <div class="tabla">
+
+                <h2>TABLA DE CARROS</h2>
+
+                <table>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>AÑO</th>
+                        <th>PRECIO</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Toyota</td>
+                        <td>Corolla</td>
+                        <td>2022</td>
+                        <td>$310,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Ford</td>
+                        <td>Mustang GT</td>
+                        <td>2020</td>
+                        <td>$520,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Tesla</td>
+                        <td>Model 3</td>
+                        <td>2023</td>
+                        <td>$620,000</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="referencias">
+
+            <div class="r1">
+                <h3>R1 - Introducción a Git y GitHub</h3>
+                <p>URL</p>
+            </div>
+
+            <div class="r2">
+                <h3>R2 - HTML + CSS + Box Model</h3>
+                <p>URL</p>
+            </div>
+
+            <div class="r3">
+                <h3>R3 - Flex y Grid</h3>
+                <p>URL</p>
+            </div>
+
+        </div>
+
+<div class="experiencia">
+
+    <div class="foto">
+        <img src="imagen" alt="Foto">
+    </div>
+
+    <div class="texto">
+
+        <h2>OSCAR NOGUEZ</h2>
+
+        <p>
+            Durante estos 4 cuatrimestres en la UPQ he aprendido
+            diferentes temas relacionados con programación,
+            sistemas y desarrollo web. También he mejorado mi
+            forma de trabajar en equipo y resolver problemas.
+        </p>
+
+    </div>
+
+    <div class="logo">
+        <img src="imagen" alt="Logo UPQ">
+    </div>
+
+</div>
+</body>
+</html>
